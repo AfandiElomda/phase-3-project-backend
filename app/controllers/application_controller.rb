@@ -23,4 +23,12 @@ class ApplicationController < Sinatra::Base
     )
     new_record.to_json
   end
+
+  patch '/record' do
+    update_record =Record.find(
+      book_author: params[:book_author],  student_age: params[:student_age], student_gender: params[:student_gender],
+      student_contact: params[:student_contact], student_email: params[:student_email], book_id: params[:book_id], student_id: params[:student_id]
+    )
+    update_record.to_json
+  end
 end
